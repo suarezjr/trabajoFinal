@@ -1,0 +1,246 @@
+/*
+!important
+ID = aquellas cajas principales o raices / no se pueden repetir.
+class = aquellas cajas secundarias / si se pueden repetir.
+selectores/etiquetas = cajas semánticas del propio HTML.
+*/
+
+/*ESTILOS RESET*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* border: 2px red solid; */
+
+}
+
+
+ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+/*ESTILOS BODY*/
+#body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*ESTILOS HEADER*/
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: aquamarine;
+}
+
+#nav {
+    height: 100%;
+    display: flex;
+    /*ALINEACIÓN HORIZONTAL*/
+    justify-content: space-around;
+    /*ALINEACIÓN VERTICAL*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.navSection {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.navImgLogo {
+    width: 50px;
+}
+
+
+/*ESTILOS MAIN*/
+#main {
+    min-height: 100vh;
+}
+
+
+/*PAGE CONTACTO*/
+
+#form {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-color: rgb(255, 106, 0);
+    
+}
+
+/*
+margin = ESPACIADO EXTERNO DE LA CAJA
+padding = ESPACIADO INTERNO DE LA CAJA
+border = BORDE DE LA CAJA
+content = CONTENIDO DE LA CAJA
+
+
+margin-top / bottom / left / right
+padding-top   ""      ""      ""
+border-top    ""      ""      ""
+
+
+1er manera
+
+        top   right   bottom   left
+margin: 10px  15px    20px     25px ;
+padding: ""    ""      ""       ""
+border:  ""    ""      ""       ""
+
+2da manera
+
+       top/bottom   left/right
+margin: 10px           15px;
+padding: ""            ""   
+border:  ""            ""
+
+
+border-style
+border-color
+border: 2px
+border-top
+border-bottom
+
+
+
+
+*/
+
+
+/*/////////////////////////////////*/
+/*GRILLAS PAGE IMÁGENES*/
+
+.grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px auto 200px;
+    grid-template-areas: 
+            /*COL1   COL2   COL3   COL4   COL5   COL6*/
+/*FILA1*/   "header header header header header header"
+/*FILA2*/   "main    main   main   main   main   main"
+/*FILA3*/   "footer footer footer footer footer footer"
+    ;
+}
+
+#header2 {
+    background-color: aqua;
+    grid-area: header;
+}
+
+#main2 {
+    background-color: brown;
+    grid-area: main;
+}
+
+#footer2 {
+    background-color: blue;
+    grid-area: footer;
+}
+
+.img-grid{
+    display: grid; /* habilitamos el tipo Grilla */
+    grid-template-columns: repeat(4, 1fr); /* definimos la cantidad de columnas, la unidad fr significa Fraccion, con lo cual indicamos que se divida TODO EL ANCHO en 4 columnas */
+    grid-template-rows: repeat(3, 20%); /* definimos cantidad de filas */
+    grid-template-areas: 
+    "img1 imgHoriz1 imgHoriz1 img2"
+    "imgHoriz2 imgHoriz2 imgHoriz3 imgHoriz3"
+    "img3 img4 img5 img6";
+    gap: 50px; /* espacio entre los elementos de la grilla */
+    justify-items: center; /* alineacion horizontal de sus hijos */
+        /*align-items: center; /* alineacion vertical de sus hijos */
+    justify-content: center; /* alineacion horizontal de todo el elemento */
+    /*align-content: center; /* alineacion vertical de todo el elemento */
+    
+}
+
+/* .img-grid img {
+    width: 100%;
+    height: 100%;
+} */
+
+.img-grid p{
+    border: 1px solid black;
+    padding: 10%;
+}
+
+.img1{
+    background-image: url("../images/img1.jpeg"); /* asi es como se puede mostrar la imagen y que se resizee */
+    grid-area: img1;
+    
+}
+
+.imgHoriz1{
+    grid-area: imgHoriz1;
+    background-color: aquamarine;
+}
+
+.imgHoriz2{
+    grid-area: imgHoriz2;
+}
+
+.imgHoriz3{
+    grid-area: imgHoriz3;
+}
+
+.img3{
+    grid-area: img3;
+}
+
+.img4{
+    grid-area: img4;
+}
+
+.img5{
+    grid-area: img5;
+}
+
+.img6{
+    grid-area: img6;
+}
+
+
+
+
+
+
+
+
+/*ESTILOS FOOTER*/
+
+#footer {
+    display: flex;
+    margin-top: auto;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(222, 181, 47);
+    
+}
+
+.footerImgLogo {
+    width: 60px;
+}
+
+.footerNav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .img-grid{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    
+    
+}
